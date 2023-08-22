@@ -3,6 +3,7 @@ export class Snack {
         this.name = name
         this.price = price
         this.imgUrl = imgUrl
+        this.enabled = 'disabled = "true"'
     }
 
     get SnackTemplate() {
@@ -12,7 +13,7 @@ export class Snack {
             src="${this.imgUrl}"
             alt="">
           <p class="m-0">${this.name}</p>
-          <button class="btn btn-success" onclick="app.SnacksController.buySnack('${this.name}')">BUY 💲${this.price}</button>
+          <button ${this.enabled} class="btn btn-success" onclick="app.SnacksController.buySnack('${this.name}')">BUY 💲${this.price}</button>
         </div>`
     }
 }

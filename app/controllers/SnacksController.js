@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js";
+import { Snack } from "../models/Snacks.js";
 import { snacksServices } from "../services/SnacksServices.js";
 import { setHTML } from "../utils/Writer.js";
 
@@ -7,7 +8,9 @@ export class SnacksController {
         this.drawMoney()
         this.drawSnacks()
         AppState.on('money', this.drawMoney)
+        AppState.on('snacks', this.drawSnacks)
     }
+
 
     addMoney() {
         snacksServices.addMoney()
@@ -16,6 +19,7 @@ export class SnacksController {
 
     buySnack(snackName) {
         snacksServices.buySnack(snackName)
+        this.drawSnacks()
     }
 
     drawMoney() {
