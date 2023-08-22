@@ -4,8 +4,11 @@ import { Snack } from "../models/Snacks.js";
 class SnacksServices {
 
     addMoney(value) {
-        AppState.money += value
-        this.enableButton()
+        if (value < 0 && AppState.money < .25) {
+        } else {
+            AppState.money += value
+            this.enableButton()
+        }
     }
 
     buySnack(snackName) {
