@@ -13,7 +13,7 @@ class ObservableAppState extends EventEmitter {
     new Snack({ name: 'JellyBeans', price: 0.75, imgUrl: "https://plus.unsplash.com/premium_photo-1663853120656-82f3842928f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amVsbHliZWFuc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" })
   ]
 
-
+ mySnacks = []
 
   money = 0
 

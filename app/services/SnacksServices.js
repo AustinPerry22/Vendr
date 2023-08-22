@@ -11,10 +11,18 @@ class SnacksServices {
     buySnack(snackName) {
         const snack = AppState.snacks.find(snack => snackName == snack.name)
 
-        if (AppState.money >= snack.price) {
+        if (AppState.money >= snack.price && snack.stock > 0) {
+            snack.stock--
             AppState.money -= snack.price
+            this.addMySnack(snackName)
             this.enableButton()
         }
+    }
+
+    addMySnack(snackName) {
+        const snack = AppState.snacks.find(snack => snackName == snack.name)
+        AppState.mySnacks.push(snack)
+        AppState.emit('mySnacks')
     }
 
     enableButton() {

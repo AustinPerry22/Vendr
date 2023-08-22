@@ -9,6 +9,7 @@ export class SnacksController {
         this.drawSnacks()
         AppState.on('money', this.drawMoney)
         AppState.on('snacks', this.drawSnacks)
+        AppState.on('mySnacks', this.drawMySnacks)
     }
 
 
@@ -33,6 +34,15 @@ export class SnacksController {
         snacks.forEach(snack => {
             snacksContent += snack.SnackTemplate
         })
-        setHTML('my-snacks', snacksContent)
+        setHTML('snacks', snacksContent)
+    }
+
+    drawMySnacks() {
+        const mySnacks = AppState.mySnacks
+        let mySnacksContent = ''
+        mySnacks.forEach(snack => {
+            mySnacksContent += snack.MySnackTemplate
+        })
+        setHTML('mySnacks', mySnacksContent)
     }
 }
