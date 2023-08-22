@@ -3,8 +3,8 @@ import { Snack } from "../models/Snacks.js";
 
 class SnacksServices {
 
-    addMoney() {
-        AppState.money += 0.25
+    addMoney(value) {
+        AppState.money += value
         this.enableButton()
     }
 

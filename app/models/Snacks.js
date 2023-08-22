@@ -8,7 +8,7 @@ export class Snack {
 
     get SnackTemplate() {
         return `
-        <div class="col-3 card text-center">
+        <div class="col-3 card text-center py-2">
           <img class="py-2"
             src="${this.imgUrl}"
             alt="">

@@ -12,8 +12,8 @@ export class SnacksController {
     }
 
 
-    addMoney() {
-        snacksServices.addMoney()
+    addMoney(value) {
+        snacksServices.addMoney(value)
     }
 
     buySnack(snackName) {
