@@ -14,7 +14,6 @@ export class SnacksController {
 
     addMoney() {
         snacksServices.addMoney()
-        console.log(AppState.money)
     }
 
     buySnack(snackName) {
