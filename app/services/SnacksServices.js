@@ -30,10 +30,10 @@ class SnacksServices {
 
     enableButton() {
         AppState.snacks.forEach(snack => {
-            if (snack.price <= AppState.money) {
-                snack.enabled = ''
-            } else {
+            if (snack.price > AppState.money || snack.stock == 0) {
                 snack.enabled = 'disabled = "true"'
+            } else {
+                snack.enabled = ''
             }
             AppState.emit('snacks')
         })
