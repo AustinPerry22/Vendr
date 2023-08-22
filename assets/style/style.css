@@ -1,1 +1,6 @@
 /* BASIC STYLES HERE */
+main img {
+    height: 25vh;
+    object-fit: cover;
+    border-radius: 1em;
+}

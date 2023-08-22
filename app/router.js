@@ -1,5 +1,6 @@
 import { AboutController } from "./controllers/AboutController.js";
 import { HomeController } from "./controllers/HomeController.js";
+import { SnacksController } from "./controllers/SnacksController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
 import { AboutView } from "./views/AboutView.js";
 
@@ -7,7 +8,7 @@ import { AboutView } from "./views/AboutView.js";
 export const router = [
   {
     path: '',
-    controller: HomeController,
+    controller: [HomeController, SnacksController],
     view: /*html*/`
     <div class="card">
       <div class="card-body">
